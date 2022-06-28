@@ -69,21 +69,6 @@ for cve in cve_data:
 export_to_csv(cve_obj_list)
 
 
-# temp_obj = CVE("None", "None", "None")
-
-# temp_obj_list=[]
-# temp_obj_list.append(temp_obj)
-# export_to_csv(temp_obj_list)
-
-
-
-
-
-
-
-# get_cve_project_data(cve_data, "https://www.cvedetails.com/cve/CVE-2017-20049/")
-# get_cve_project_data(cve_data, "https://www.cvedetails.com/cve/CVE-2015-20107/")
-
     
 
 
