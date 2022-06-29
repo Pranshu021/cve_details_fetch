@@ -42,6 +42,9 @@ class CVE:
 
 
 def main():
+    if len(sys.argv) < 2:
+        print("[-] No Arguments Passed. Use -h flag for help")
+        exit(1)
     parser = argparse.ArgumentParser(description="Handle the info requirement flags")
     subparser = parser.add_subparsers(dest='command')
     cve_parser = subparser.add_parser('cve')
