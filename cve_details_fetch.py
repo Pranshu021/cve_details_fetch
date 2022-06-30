@@ -32,8 +32,9 @@ class CVE:
     def generate_cve_report(self, req):
         print(req)
 
-    def get_project_cve_details(self, startDate, endDate, severity):
-        cve_list = nvdlib.searchCVE(keyword=self.project, pubStartDate=startDate, pubEndDate=endDate, cvssV3Severity=severity)
+    def get_project_cve_details(self, **kwargs):
+            
+        cve_list = nvdlib.searchCVE(keyword=self.project)
         return cve_list
 
     def generate_project_cve_details(self, cve_list):
@@ -71,7 +72,7 @@ def main():
     if args.command == 'project':
         name = args.name
         cve_obj = CVE(project_name=name)
-        cve_list = cve_obj.get_project_cve_details(args.startDate+" 00:00", args.endDate+ " 00:00", args.severity)
+        cve_list = cve_obj.get_project_cve_details(pubStartDate=args.startDate, pubEndDate=args.endDate, cvssV3Severity=args.severity)
         cve_obj.generate_project_cve_details(cve_list)
 
 if __name__ == "__main__":
